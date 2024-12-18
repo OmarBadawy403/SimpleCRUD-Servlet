@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Info Student</title>
+  <style>
+    /* Reset margin and padding for a clean slate */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling with light grayish-blue background */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8; /* Light grayish-blue */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Main container styling */
+    .container {
+      background-color: #ffffff; /* White background */
+      padding: 3rem 4rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 600px; /* Larger form */
+      max-width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    /* Form heading styling with light sky-blue color */
+    h2 {
+      text-align: center;
+      color: #66b2ff; /* Light sky blue */
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    /* Label and input field styling */
+    label {
+      font-size: 1.1rem;
+      color: #444;
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      outline: none;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    select:focus {
+      border-color: #66b2ff; /* Highlight border on focus with sky-blue */
+      box-shadow: 0 0 5px rgba(102, 178, 255, 0.8); /* Glow effect on focus */
+    }
+
+    /* Dropdown style */
+    select {
+      background-color: #fff;
+      font-size: 1rem;
+      padding: 0.75rem;
+      color: #333;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    /* Button styling */
+    .btn {
+      width: 48%;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-add {
+      background-color: #28a745;
+      margin-right: 4%;
+    }
+
+    .btn-add:hover {
+      background-color: #218838;
+    }
+
+    .btn-view {
+      background-color: #007bff;
+    }
+
+    .btn-view:hover {
+      background-color: #0056b3;
+    }
+
+    /* Footer margin for buttons */
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Information Student</h2>
+    <form action="SaveServlet" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="country">Country</label>
+      <select id="country" name="country" required>
+        <option value="">Select a country</option>
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+        <option value="Egypt">Egypt</option>
+        <option value="Australia">Australia</option>
+      </select>
+      
+      <div class="button-container">
+        <button type="submit" class="btn btn-add">Add</button>
+        <a href="ViewServlet" class="btn btn-view">View Student</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
